@@ -55,7 +55,7 @@ class ImmichProvider(MediaProvider):
 
     async def get_album_images(self, album_id: str) -> List[Dict]:
         immich, session = await self._get_client()
-        album = await immich.albums.async_get_album_info(album_id, without_assests=False)
+        album = await immich.albums.async_get_album_info(album_id, without_assets=False)
         await session.close()
         return [
             {
